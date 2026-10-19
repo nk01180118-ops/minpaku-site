@@ -255,12 +255,25 @@ p { margin: 0 0 1.2em; }
   .btn { min-width: 0; width: 100%; }
 }
 
-/* ---------- 言語切替 ---------- */
-.nav-langs { display: flex; font-family: var(--latin); font-size: .95rem; letter-spacing: .06em; }
-.nav-langs a { padding: .1em .55em; border-left: 1px solid currentColor; opacity: .65; }
-.nav-langs a:first-child { border-left: 0; }
-.nav-langs a[aria-current="page"], .nav-langs a:hover { opacity: 1; }
-.nav-list .nav-langs a::after { display: none; }
+/* ---------- 言語切替（プルダウン） ---------- */
+.lang-switch { position: relative; }
+.lang-switch summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: .45em; min-height: 40px; padding: 0 .9em; border: 1px solid currentColor; font-size: .86rem; letter-spacing: .06em; white-space: nowrap; }
+.lang-switch summary::-webkit-details-marker { display: none; }
+.lang-switch summary::after { content: ""; width: .45em; height: .45em; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: translateY(-25%) rotate(45deg); margin-left: .2em; transition: transform .2s; }
+.lang-switch details[open] summary::after { transform: translateY(15%) rotate(-135deg); }
+.lang-icon { width: 1.1em; height: 1.1em; fill: none; stroke: currentColor; stroke-width: 1.4; }
+.lang-switch ul { list-style: none; margin: 0; padding: .4em 0; position: absolute; right: 0; top: calc(100% + 8px); min-width: 11em; background: var(--paper); color: var(--ink); box-shadow: 0 8px 28px rgba(42,36,32,.18); z-index: 70; }
+.lang-switch ul a { display: block; padding: .75em 1.3em; font-size: .92rem; letter-spacing: .04em; }
+.lang-switch ul a:hover { background: var(--paper-2); }
+.lang-switch ul a::after { display: none; }
+.lang-switch ul a[aria-current="page"] { color: var(--shu); }
+.lang-switch ul a[aria-current="page"]::before { content: "✓"; margin-right: .6em; }
+.lang-switch ul a:not([aria-current])::before { content: ""; display: inline-block; width: 1.25em; }
+@media (max-width: 960px) {
+  .lang-switch ul { position: static; box-shadow: none; background: none; padding: .3em 0 0; min-width: 0; text-align: center; }
+  .lang-switch ul a { padding: .5em 1em; }
+  .lang-switch summary { justify-content: center; }
+}
 
 /* ---------- 見出しのかな＋ローマ字（外国語版） ---------- */
 .feature-mark { display: flex; flex-direction: column; align-items: center; gap: .8em; flex-shrink: 0; }

@@ -16,6 +16,13 @@
   toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
   navList.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
 
+  // 言語切替：外側をクリック / Esc で閉じる
+  const langMenu = document.querySelector('.lang-switch details');
+  if (langMenu) {
+    document.addEventListener('click', (e) => { if (!langMenu.contains(e.target)) langMenu.open = false; });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') langMenu.open = false; });
+  }
+
   // ヒーロー：スライドショー
   const slides = document.querySelectorAll('.hero-slide');
   let current = 0;
