@@ -11,6 +11,8 @@
 <meta property="og:description" content="昭和の面影が残る木造の一軒家を、まるごと貸し切り。暮らすように泊まる、一棟貸しの宿。">
 <meta property="og:image" content="assets/images/living-1.jpg">
 
+<link rel="alternate" hreflang="ja" href="https://nk01180118-ops.github.io/minpaku-site/">
+<link rel="alternate" hreflang="en" href="https://nk01180118-ops.github.io/minpaku-site/en/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
@@ -39,6 +41,7 @@
         <li><a href="#gallery">ギャラリー</a></li>
         <li><a href="#guide">ご利用案内</a></li>
         <li><a href="#access">アクセス</a></li>
+        <li><a href="en/" class="nav-lang" lang="en" hreflang="en">English</a></li>
         <li><a href="#reserve" class="nav-cta">ご予約</a></li>
       </ul>
     </nav>
@@ -50,10 +53,11 @@
   <!-- ヒーロー -->
   <section class="hero">
     <div class="hero-media" aria-hidden="true">
-      <div class="hero-slide is-active"><img src="assets/images/living-1.jpg" alt="" loading="eager"></div>
-      <div class="hero-slide"><img src="assets/images/bed-b-1.jpg" alt=""></div>
-      <div class="hero-slide"><img src="assets/images/bed-a-1.jpg" alt=""></div>
-      <div class="hero-slide"><img src="assets/images/dining-1.jpg" alt=""></div>
+      <!-- スマホでは縦長に切り抜いた写真に切り替える -->
+      <picture class="hero-slide is-active"><source media="(max-width: 600px)" srcset="assets/images/hero-sp-1.jpg"><img src="assets/images/living-1.jpg" alt="" loading="eager"></picture>
+      <picture class="hero-slide"><source media="(max-width: 600px)" srcset="assets/images/hero-sp-2.jpg"><img src="assets/images/bed-b-1.jpg" alt=""></picture>
+      <picture class="hero-slide"><source media="(max-width: 600px)" srcset="assets/images/hero-sp-3.jpg"><img src="assets/images/bed-a-1.jpg" alt=""></picture>
+      <picture class="hero-slide"><source media="(max-width: 600px)" srcset="assets/images/hero-sp-4.jpg"><img src="assets/images/dining-1.jpg" alt=""></picture>
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-copy">
@@ -312,6 +316,7 @@
       <li><a href="#guide">ご利用案内</a></li>
       <li><a href="#access">アクセス</a></li>
       <li><a href="#reserve">ご予約</a></li>
+      <li><a href="en/" lang="en" hreflang="en">English</a></li>
     </ul>
   </div>
   <p class="copyright">&copy; Guesthouse Alegre</p>
