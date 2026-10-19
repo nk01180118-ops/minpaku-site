@@ -1,0 +1,121 @@
+/* 写真集・雑誌路線
+   写真が主役。文字は小さく細く、余白を大きく。色はほぼ白と墨だけ。
+   ローマ数字や英字は Instrument Serif、和文は細めのゴシックで静かに。 */
+:root {
+  --paper: #f3f2ee;
+  --ink: #1c1b19;
+  --mute: #75716a;
+  --rule: #d6d3cb;
+  --serif: "Instrument Serif", Georgia, serif;
+  --sans: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+  --gutter: max(20px, 5vw);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 60px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-weight: 400; font-size: 15px; line-height: 2; letter-spacing: .06em; -webkit-font-smoothing: antialiased; }
+img { display: block; width: 100%; height: auto; }
+figure { margin: 0; }
+p { margin: 0 0 1em; }
+a { color: inherit; }
+h1, h2 { margin: 0; font-weight: 400; }
+.serif { font-family: var(--serif); letter-spacing: 0; }
+
+/* ---------- ヘッダー ---------- */
+.top { position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; padding: 14px var(--gutter); background: var(--paper); border-bottom: 1px solid var(--rule); }
+.top-logo { text-decoration: none; font-weight: 500; letter-spacing: .5em; font-size: .85rem; }
+.top-nav { display: flex; gap: clamp(16px, 3vw, 36px); font-size: .82rem; }
+.top-nav a { text-decoration: none; color: var(--mute); }
+.top-nav a:hover { color: var(--ink); }
+.top-nav .top-book { color: var(--ink); border-bottom: 1px solid var(--ink); }
+
+/* ---------- 表紙 ---------- */
+.cover img { height: auto; aspect-ratio: 16 / 9; max-height: 82vh; object-fit: cover; }
+.masthead { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 24px; padding: 28px var(--gutter) 0; }
+.mast-title { font-family: var(--serif); font-size: clamp(4.5rem, 14vw, 11rem); line-height: .85; letter-spacing: -.01em; }
+.mast-meta { text-align: right; font-size: .82rem; color: var(--mute); padding-bottom: .8em; }
+.mast-meta p { margin: 0; }
+
+/* ---------- 導入 ---------- */
+.intro { padding: clamp(80px, 12vw, 160px) var(--gutter); display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+.intro-big { grid-column: 2 / 9; font-size: clamp(1.25rem, 2.4vw, 1.75rem); line-height: 1.9; font-weight: 300; text-wrap: pretty; }
+.intro-small { grid-column: 7 / 12; color: var(--mute); margin-top: 1.6em; }
+
+/* ---------- 見開き ---------- */
+.spread { padding: 0 var(--gutter) clamp(96px, 12vw, 160px); display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; align-items: end; }
+.spread-a .f-big { grid-column: 1 / 9; }
+.spread-a .f-big img { aspect-ratio: 4 / 3; object-fit: cover; }
+.spread-a .f-small { grid-column: 9 / 13; }
+.spread-a .f-small img { aspect-ratio: 3 / 4; object-fit: cover; margin-bottom: 1.2em; }
+figcaption, .k-text { font-size: .82rem; color: var(--mute); line-height: 1.9; }
+.cap-t { display: block; color: var(--ink); font-weight: 500; letter-spacing: .3em; margin-bottom: .3em; }
+
+.rooms { padding: 0 0 clamp(96px, 12vw, 160px); }
+.full img { aspect-ratio: 16 / 9; max-height: 86vh; object-fit: cover; }
+.room-cap { padding: 24px var(--gutter) clamp(80px, 10vw, 140px); display: grid; grid-template-columns: repeat(12, 1fr); gap: 0 24px; }
+.room-cap > * { grid-column: 7 / 13; }
+.room-cap:last-child { padding-bottom: 0; }
+.room-name { font-size: 1.25rem; letter-spacing: .3em; margin-bottom: .6em; }
+.room-name .serif { font-size: 1.6rem; letter-spacing: 0; margin-right: .3em; }
+.room-cap p { color: var(--mute); margin: 0; }
+.room-cap .room-spec { color: var(--ink); margin-top: .6em; font-size: .82rem; }
+.pair { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; padding: 0 var(--gutter); align-items: end; }
+.pair figure:first-child img { aspect-ratio: 3 / 2; object-fit: cover; }
+.pair figure:last-child img { aspect-ratio: 4 / 5; object-fit: cover; }
+
+.spread-k { align-items: start; }
+.spread-k .f-tall { grid-column: 1 / 6; }
+.spread-k .f-tall img { aspect-ratio: 2 / 3; object-fit: cover; }
+.spread-k .k-right { grid-column: 7 / 13; padding-top: clamp(40px, 10vw, 160px); }
+.spread-k .k-right img { aspect-ratio: 4 / 3; object-fit: cover; margin-bottom: 1.2em; }
+.k-text { max-width: 28em; }
+
+/* ---------- 細部 ---------- */
+.details { padding: 0 0 clamp(96px, 12vw, 160px); }
+.sec-title { padding: 0 var(--gutter); display: flex; align-items: baseline; gap: 1em; font-size: .9rem; letter-spacing: .3em; margin-bottom: 32px; border-top: 1px solid var(--rule); padding-top: 24px; margin-left: var(--gutter); margin-right: var(--gutter); padding-left: 0; padding-right: 0; }
+.sec-title .serif { font-size: 2.4rem; letter-spacing: 0; line-height: 1; }
+.strip { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); padding: 0 var(--gutter) 12px; scrollbar-width: thin; }
+.strip figure { flex: 0 0 clamp(160px, 22vw, 260px); scroll-snap-align: start; }
+.strip img { aspect-ratio: 4 / 5; object-fit: cover; margin-bottom: .6em; }
+.strip:focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
+.details-list { padding: 0 var(--gutter); margin-top: 28px; font-size: .82rem; color: var(--mute); max-width: 60em; }
+
+/* ---------- ご案内 ---------- */
+.info { padding: 0 0 clamp(96px, 12vw, 160px); }
+.table { margin: 0 var(--gutter); }
+.table div { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+.table dt { grid-column: 1 / 4; font-weight: 500; letter-spacing: .2em; font-size: .85rem; }
+.table dd { grid-column: 4 / 11; margin: 0; color: var(--mute); }
+
+/* ---------- 予約 ---------- */
+.book { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; padding: 0 var(--gutter) clamp(96px, 12vw, 160px); align-items: end; }
+.book-pic { grid-column: 1 / 5; }
+.book-pic img { aspect-ratio: 2 / 3; object-fit: cover; }
+.book-text { grid-column: 6 / 13; }
+.book-line { font-size: clamp(2.2rem, 5.5vw, 4.6rem); line-height: 1.05; margin-bottom: .7em; font-style: italic; }
+.book-link { display: inline-flex; align-items: center; gap: 1em; text-decoration: none; font-size: 1.05rem; font-weight: 500; letter-spacing: .15em; padding: 1em 0; border-bottom: 1px solid var(--ink); }
+.book-link span { transition: transform .25s; }
+.book-link:hover span { transform: translateX(6px); }
+.book-note { margin-top: 1.4em; font-size: .78rem; color: var(--mute); }
+
+.foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; padding: 24px var(--gutter); border-top: 1px solid var(--rule); font-size: .72rem; letter-spacing: .3em; color: var(--mute); }
+
+/* ---------- スマホ ---------- */
+@media (max-width: 700px) {
+  body { font-size: 14px; }
+  .top-nav { gap: 16px; }
+  .cover img { aspect-ratio: 4 / 5; max-height: none; }
+  .masthead { grid-template-columns: 1fr; gap: 12px; }
+  .mast-meta { text-align: left; padding-bottom: 0; }
+  .intro, .spread, .room-cap, .book, .table div { grid-template-columns: 1fr; }
+  .intro > *, .spread > *, .room-cap > *, .book > *, .table div > * { grid-column: 1 / -1 !important; }
+  .intro-small { margin-top: 0; }
+  .spread-a .f-small { width: 62%; justify-self: end; }
+  .full img { aspect-ratio: 4 / 5; max-height: none; }
+  .pair { gap: 12px; }
+  .spread-k .k-right { padding-top: 0; }
+  .spread-k .f-tall { width: 72%; }
+  .table div { gap: 2px; }
+  .book-pic { width: 60%; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .book-link span { transition: none; } }
