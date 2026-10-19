@@ -245,25 +245,32 @@ p { margin: 0 0 1.2em; }
 }
 
 /* ---------- 言語切替 ---------- */
-.nav-lang { font-family: var(--latin); font-size: 1rem; border: 1px solid currentColor; padding: .15em .8em; }
-.nav-lang::after { display: none; }
+.nav-langs { display: flex; font-family: var(--latin); font-size: .95rem; letter-spacing: .06em; }
+.nav-langs a { padding: .1em .55em; border-left: 1px solid currentColor; opacity: .65; }
+.nav-langs a:first-child { border-left: 0; }
+.nav-langs a[aria-current="page"], .nav-langs a:hover { opacity: 1; }
+.nav-list .nav-langs a::after { display: none; }
 
-/* ---------- 英語版 ---------- */
-html[lang="en"] body { letter-spacing: .01em; line-height: 1.85; }
-html[lang="en"] .section-title,
-html[lang="en"] .reserve-title { font-family: var(--latin); font-weight: 500; font-size: clamp(1.8rem, 3.6vw, 2.6rem); line-height: 1.3; letter-spacing: .01em; text-wrap: balance; }
-html[lang="en"] .room-name { font-family: var(--latin); font-size: 1.9rem; letter-spacing: .02em; }
-html[lang="en"] .room-name span { font-family: var(--serif); font-size: .9rem; letter-spacing: .2em; color: var(--ink-soft); margin-left: .6em; }
-html[lang="en"] .nav-list { font-family: var(--latin); font-size: 1.02rem; letter-spacing: .04em; }
-html[lang="en"] .nav-lang { font-family: var(--serif); font-size: .82rem; }
-html[lang="en"] .fac-lists h3 { letter-spacing: .06em; }
-html[lang="en"] .guide-list div { grid-template-columns: 8em 1fr; }
-html[lang="en"] .access-list strong { width: 4.5em; }
+/* ---------- 見出しのかな＋ローマ字（外国語版） ---------- */
+.feature-mark { display: flex; flex-direction: column; align-items: center; gap: .8em; flex-shrink: 0; }
+.feature-romaji { margin: 0; font-family: var(--latin); font-style: italic; font-size: 1rem; line-height: 1.3; color: var(--wood); text-align: center; }
+.feature-romaji span { display: block; font-style: normal; font-size: .78rem; letter-spacing: .08em; color: var(--ink-soft); }
+
+/* ---------- 外国語版（英語・ポルトガル語） ---------- */
+html:not([lang="ja"]) body { letter-spacing: .01em; line-height: 1.85; }
+html:not([lang="ja"]) .section-title,
+html:not([lang="ja"]) .reserve-title { font-family: var(--latin); font-weight: 500; font-size: clamp(1.8rem, 3.6vw, 2.6rem); line-height: 1.3; letter-spacing: .01em; text-wrap: balance; }
+html:not([lang="ja"]) .room-name { font-family: var(--latin); font-size: 1.9rem; letter-spacing: .02em; }
+html:not([lang="ja"]) .room-name span { font-family: var(--serif); font-size: .9rem; letter-spacing: .2em; color: var(--ink-soft); margin-left: .6em; }
+html:not([lang="ja"]) .nav-list { font-family: var(--latin); font-size: 1.02rem; letter-spacing: .04em; }
+html:not([lang="ja"]) .fac-lists h3 { letter-spacing: .06em; }
+html:not([lang="ja"]) .guide-list div { grid-template-columns: 8em 1fr; }
+html:not([lang="ja"]) .access-list strong { width: 4.5em; }
 .hero-copy--en { right: auto; left: clamp(20px, 6vw, 96px); top: auto; bottom: clamp(110px, 16vh, 180px); transform: none; display: block; max-width: 34rem; text-shadow: 0 2px 16px rgba(0,0,0,.35); }
 .hero-jp { font-size: .9rem; letter-spacing: .4em; margin: 0 0 .6em; opacity: .9; }
 .hero-title-en { font-family: var(--latin); font-weight: 400; font-style: italic; font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.05; margin: 0 0 .35em; }
 .hero-sub-en { font-family: var(--latin); font-size: clamp(1.05rem, 1.6vw, 1.3rem); line-height: 1.5; margin: 0; }
-html[lang="en"] .hero-overlay { background: linear-gradient(0deg, rgba(30,22,16,.6), rgba(30,22,16,.1) 65%), linear-gradient(180deg, rgba(30,22,16,.4), transparent 18%); }
+html:not([lang="ja"]) .hero-overlay { background: linear-gradient(0deg, rgba(30,22,16,.6), rgba(30,22,16,.1) 65%), linear-gradient(180deg, rgba(30,22,16,.4), transparent 18%); }
 @media (max-width: 600px) {
   .hero-copy--en { left: 20px; right: 20px; transform: none; bottom: 110px; }
 }
