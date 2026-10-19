@@ -89,7 +89,14 @@ p { margin: 0 0 1.2em; }
 @keyframes scrollLine { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
 
 @media (max-width: 600px) {
-  .hero-copy { right: 20px; transform: translateY(-55%); gap: 14px; }
+  .hero-copy { right: 20px; top: auto; bottom: 108px; transform: none; gap: 14px; }
+  /* 1枚目は写真全体を上部に置いた縦長画像なので、上端に合わせる */
+  .hero-slide--top img { object-position: center top; }
+}
+@media (max-width: 600px) and (max-height: 720px) {
+  .hero-title { font-size: 1.55rem; }
+  .hero-sub { padding-top: 2.2em; font-size: .78rem; }
+  .hero-copy { bottom: 96px; }
   .hero-sub { padding-top: 3em; }
   .hero-overlay { background: linear-gradient(270deg, rgba(30,22,16,.6), rgba(30,22,16,.25)), linear-gradient(180deg, rgba(30,22,16,.4), transparent 22%); }
   .hero-scroll { display: none; }
