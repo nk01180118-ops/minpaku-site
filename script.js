@@ -1,4 +1,21 @@
 (() => {
+  // ヒーローの高さを開いたときの画面の高さで固定する。
+  // スマホでスクロールするとアドレスバーが隠れて画面が縦に伸び、
+  // それに合わせてヒーローと写真が拡大されてカクッとなるのを防ぐ。
+  // 横幅が変わったとき（画面の回転など）だけ測り直す。
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    let heroWidth = window.innerWidth;
+    const lockHeroHeight = () => hero.style.setProperty('--hero-h', window.innerHeight + 'px');
+    lockHeroHeight();
+    window.addEventListener('resize', () => {
+      if (window.innerWidth !== heroWidth) {
+        heroWidth = window.innerWidth;
+        lockHeroHeight();
+      }
+    });
+  }
+
   // ヘッダー：スクロールで背景を付ける
   const header = document.getElementById('site-header');
   const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 40);
