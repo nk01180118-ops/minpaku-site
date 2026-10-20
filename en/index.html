@@ -18,7 +18,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css?v=20261020d">
+<script>
+  // 古いページがスマホに残っていたら、最新版に自動で読み込み直す（1回だけ）
+  (function () {
+    var v = '20261020052213';
+    try {
+      fetch('../version.json', { cache: 'no-store' })
+        .then(function (r) { return r.json(); })
+        .then(function (j) {
+          if (j.v && j.v !== v && sessionStorage.getItem('reloaded-for') !== j.v) {
+            sessionStorage.setItem('reloaded-for', j.v);
+            location.reload();
+          }
+        })
+        .catch(function () {});
+    } catch (e) {}
+  })();
+</script>
+<link rel="stylesheet" href="../styles.css?v=20261020052213">
 <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 <body>
@@ -353,6 +370,6 @@
   <button class="lightbox-next" aria-label="Next photo">&#8250;</button>
 </div>
 
-<script src="../script.js?v=20261020d"></script>
+<script src="../script.js?v=20261020052213"></script>
 </body>
 </html>
