@@ -345,3 +345,14 @@ html:not([lang="ja"]) .hero-overlay { background: linear-gradient(0deg, rgba(30,
   .access-grid { grid-template-columns: 1fr 1fr; }
   .access-map img { width: 100%; max-width: 560px; aspect-ratio: 4 / 5; }
 }
+
+/* パソコン：写真を画面の端にぴったり付けず、少しだけ余白を空ける */
+@media (min-width: 1025px) {
+  :root { --edge: clamp(20px, 2.4vw, 44px); }
+  .concept .container { padding-right: var(--edge); }
+  #rooms .container, #living .container, #kitchen .container { padding-inline: var(--edge); }
+  #rooms .feature-head, #living .feature-head, #kitchen .feature-head, #living .feature-text { padding-inline: calc(var(--gutter) - var(--edge)); }
+  .room-body { padding-right: calc(var(--gutter) - var(--edge)); }
+  .room--reverse .room-body { padding-right: 0; padding-left: calc(var(--gutter) - var(--edge)); }
+  .split > div { padding-right: calc(var(--gutter) - var(--edge)); }
+}
