@@ -108,8 +108,8 @@ p { margin: 0 0 1.2em; }
 .concept-points strong { font-weight: 600; font-size: 1.05rem; }
 .concept-points em { font-style: normal; }
 .concept-points span { font-size: .78rem; color: var(--ink-soft); }
-.concept-media { position: relative; padding-bottom: 18%; }
-.concept-img-main { width: 72%; margin-left: auto; aspect-ratio: 2 / 3; object-fit: cover; }
+.concept-media { position: relative; }
+.concept-img-main { width: min(100%, 440px); margin-inline: auto; aspect-ratio: 2 / 3; object-fit: cover; }
 .concept-img-sub { position: absolute; left: 0; bottom: 0; width: 52%; aspect-ratio: 3 / 2; object-fit: cover; border: 8px solid var(--paper); }
 
 /* ---------- Feature sections ---------- */
@@ -192,7 +192,7 @@ p { margin: 0 0 1.2em; }
 .access-map p { text-align: center; font-size: .82rem; color: var(--ink-soft); margin-top: 1em; }
 
 /* ---------- Reserve ---------- */
-.reserve { position: relative; padding: clamp(100px, 14vw, 170px) 0; color: #fff; text-align: center; overflow: hidden; }
+.reserve { position: relative; padding: clamp(100px, 14vw, 170px) 0; background: var(--ink); color: #fff; text-align: center; overflow: hidden; }
 .reserve-bg { position: absolute; inset: 0; }
 .reserve-bg img { width: 100%; height: 100%; object-fit: cover; }
 .reserve-bg::after { content: ""; position: absolute; inset: 0; background: rgba(36,26,20,.62); }

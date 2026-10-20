@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261019d">
+<link rel="stylesheet" href="styles.css?v=20261020a">
 <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 <body>
@@ -39,7 +39,6 @@
         <li><a href="#living">くつろぐ</a></li>
         <li><a href="#kitchen">つくる</a></li>
         <li><a href="#facilities">設備</a></li>
-        <li><a href="#gallery">ギャラリー</a></li>
         <li><a href="#guide">ご利用案内</a></li>
         <li><a href="#access">アクセス</a></li>
         <li class="lang-switch">
@@ -66,7 +65,6 @@
       <!-- スマホでは縦長に切り抜いた写真に切り替える -->
       <picture class="hero-slide is-active"><source media="(max-width: 600px)" srcset="assets/images/hero-sp-maple.jpg"><img src="assets/images/hero-maple.jpg" alt="" loading="eager"></picture>
       <picture class="hero-slide"><source media="(max-width: 600px)" srcset="assets/images/hero-sp-living2.jpg"><img src="assets/images/living-1.jpg" alt=""></picture>
-      <picture class="hero-slide"><source media="(max-width: 600px)" srcset="assets/images/hero-sp-exterior.jpg"><img src="assets/images/hero-exterior.jpg" alt=""></picture>
       <picture class="hero-slide"><source media="(max-width: 600px)" srcset="assets/images/hero-sp-3.jpg"><img src="assets/images/hero-hall.jpg" alt=""></picture>
     </div>
     <div class="hero-overlay"></div>
@@ -97,8 +95,7 @@
         </ul>
       </div>
       <div class="concept-media reveal">
-        <img src="assets/images/exterior.jpg" alt="黄色い外壁の二階建ての宿の外観" class="concept-img-main" loading="lazy">
-        <img src="assets/images/hall-art.jpg" alt="玄関ホールの照明と梅の絵" class="concept-img-sub" loading="lazy">
+        <img src="assets/images/concept-hallway.jpg" alt="二階へ続く階段と木の廊下" class="concept-img-main" loading="lazy">
       </div>
     </div>
   </section>
@@ -136,7 +133,7 @@
 
       <div class="room room--reverse reveal">
         <div class="room-media">
-          <img src="assets/images/bed-b-1.jpg" alt="紅葉の絵が飾られた明るい和室の寝室" loading="lazy">
+          <img src="assets/images/bed-b-2.jpg" alt="紅葉の絵が飾られた寝室。シングルベッドが2台並ぶ" loading="lazy">
         </div>
         <div class="room-body">
           <p class="room-no">Room 02</p>
@@ -147,7 +144,7 @@
             <div><dt>設備</dt><dd>暖房器具・冬用の暖かい寝具</dd></div>
           </dl>
           <div class="room-thumbs">
-            <img src="assets/images/bed-b-2.jpg" alt="紅葉の間を正面から" loading="lazy" data-lightbox>
+            <img src="assets/images/bed-b-outlet.jpg" alt="ベッドサイドのコンセント" loading="lazy" data-lightbox>
             <img src="assets/images/bed-b-3.jpg" alt="紅葉の間の奥の様子" loading="lazy" data-lightbox>
             <img src="assets/images/bedding.jpg" alt="毛布とブランケットの用意" loading="lazy" data-lightbox>
           </div>
@@ -190,7 +187,7 @@
         <div>
           <p class="feature-text">桜の壁画が春を感じさせるキッチン。ガスコンロ、冷蔵庫、電子レンジ、電気ケトルのほか、鍋やフライパン、食器もひと通り揃っています。市場で見つけた食材で、旅先ならではの食卓をどうぞ。</p>
           <div class="split-thumbs">
-            <img src="assets/images/kitchen-tools.jpg" alt="食器とカトラリー" loading="lazy" data-lightbox>
+            <img src="assets/images/kitchen-stove.jpg" alt="2口のガスコンロ" loading="lazy" data-lightbox>
             <img src="assets/images/kitchen-kettle.jpg" alt="電気ケトルとお茶のセット" loading="lazy" data-lightbox>
             <img src="assets/images/kitchen-sakura.jpg" alt="桜と小鳥の壁画" loading="lazy" data-lightbox>
           </div>
@@ -257,24 +254,6 @@
     </div>
   </section>
 
-  <!-- ギャラリー -->
-  <section class="gallery section" id="gallery">
-    <div class="container">
-      <p class="section-label reveal">Gallery</p>
-      <h2 class="section-title reveal">ギャラリー</h2>
-      <div class="gallery-grid reveal">
-        <img src="assets/images/exterior.jpg" alt="外観" loading="lazy" data-lightbox>
-        <img src="assets/images/entrance.jpg" alt="玄関から階段を望む" loading="lazy" data-lightbox>
-        <img src="assets/images/stairs.jpg" alt="二階へ続く階段" loading="lazy" data-lightbox>
-        <img src="assets/images/living-1.jpg" alt="リビングダイニング" loading="lazy" data-lightbox>
-        <img src="assets/images/bed-a-2.jpg" alt="波の間" loading="lazy" data-lightbox>
-        <img src="assets/images/bed-b-2.jpg" alt="紅葉の間" loading="lazy" data-lightbox>
-        <img src="assets/images/stove.jpg" alt="ガスコンロ" loading="lazy" data-lightbox>
-        <img src="assets/images/bath-amenity.jpg" alt="浴室のアメニティ" loading="lazy" data-lightbox>
-        <img src="assets/images/dryer.jpg" alt="ドライヤー" loading="lazy" data-lightbox>
-      </div>
-    </div>
-  </section>
 
   <!-- ご利用案内 -->
   <section class="guide section" id="guide">
@@ -321,7 +300,6 @@
 
   <!-- 予約 -->
   <section class="reserve" id="reserve">
-    <div class="reserve-bg" aria-hidden="true"><img src="assets/images/dining-2.jpg" alt="" loading="lazy"></div>
     <div class="reserve-inner reveal">
       <p class="section-label">Reservation</p>
       <h2 class="reserve-title">ご予約・お問い合わせ</h2>
@@ -362,6 +340,6 @@
   <button class="lightbox-next" aria-label="次の写真">&#8250;</button>
 </div>
 
-<script src="script.js?v=20261019d"></script>
+<script src="script.js?v=20261020a"></script>
 </body>
 </html>
