@@ -32,9 +32,6 @@ p { margin: 0 0 1.2em; }
 .container { width: min(1120px, 100% - 48px); margin-inline: auto; }
 .section { padding: clamp(80px, 12vw, 150px) 0; }
 
-/* 仮の内容（公開前に差し替え） */
-.ph { background: linear-gradient(transparent 62%, rgba(214,165,49,.45) 62%); }
-
 /* ---------- Header ---------- */
 .site-header {
   position: fixed; inset: 0 0 auto; z-index: 50; height: var(--header-h);
@@ -356,3 +353,5 @@ html:not([lang="ja"]) .hero-overlay { background: linear-gradient(0deg, rgba(30,
   .room--reverse .room-body { padding-right: 0; padding-left: calc(var(--gutter) - var(--edge)); }
   .split > div { padding-right: calc(var(--gutter) - var(--edge)); }
 }
+
+.addr-note { display: inline-block; margin-top: .3em; font-family: var(--sans); font-size: .8rem; color: var(--ink-soft); letter-spacing: .04em; }
