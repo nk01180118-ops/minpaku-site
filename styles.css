@@ -108,8 +108,8 @@ p { margin: 0 0 1.2em; }
 .concept-points strong { font-weight: 600; font-size: 1.05rem; }
 .concept-points em { font-style: normal; }
 .concept-points span { font-size: .78rem; color: var(--ink-soft); }
-.concept-media { position: relative; }
-.concept-img-main { width: min(100%, 440px); margin-inline: auto; aspect-ratio: 2 / 3; object-fit: cover; }
+.concept-media { position: relative; padding-bottom: 18%; }
+.concept-img-main { width: 72%; margin-left: auto; aspect-ratio: 2 / 3; object-fit: cover; }
 .concept-img-sub { position: absolute; left: 0; bottom: 0; width: 52%; aspect-ratio: 3 / 2; object-fit: cover; border: 8px solid var(--paper); }
 
 /* ---------- Feature sections ---------- */
